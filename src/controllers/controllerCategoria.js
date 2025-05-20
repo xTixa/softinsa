@@ -1,5 +1,5 @@
-const db = require('../database/db'); // Ajusta o caminho conforme a tua estrutura
-const Categoria = require('../models/categoria');
+const db = require('../models'); // isto vai usar o index.js
+const Categoria = db.categoria;
 
 // Criar nova categoria
 exports.createCategoria = async (req, res) => {
