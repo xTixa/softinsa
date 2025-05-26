@@ -1,4 +1,4 @@
-const db = require('../models'); // isto vai usar o index.js
+const db = require('../models'); 
 const Categoria = db.categoria;
 
 // Criar nova categoria
