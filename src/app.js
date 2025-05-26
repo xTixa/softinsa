@@ -3,6 +3,8 @@ const app = express();
 const db = require('./models');
 const categoriaRoutes = require('./routes/routeCategoria');
 const utilizadorRoutes = require('./routes/routeUtilizadores');
+const areaRoutes = require('./routes/routeArea');
+const topicoRoutes = require('./routes/routeTopico'); 
 
 // Configurações
 app.set('port', process.env.port || 3000);
@@ -12,6 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 // Corrigir aqui o caminho da rota
 app.use('/api/categorias', categoriaRoutes);
 app.use('/api/utilizadores', utilizadorRoutes);
+app.use('/api/areas', areaRoutes);
+app.use('/api/topicos', topicoRoutes);
 
 // Sincronizar e arrancar servidor
 db.sequelize.sync({ alter: true })
