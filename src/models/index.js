@@ -24,8 +24,8 @@ const sequelize = require('../database/db');
 // const notificacao = require('./notificacao')(sequelize, Sequelize.DataTypes);
 // const notificar = require('./notificar')(sequelize, Sequelize.DataTypes);
 // const publicacao = require('./publicacao')(sequelize, Sequelize.DataTypes);
- const quiz = require('./quiz')(sequelize, Sequelize.DataTypes);
-// const respostas_quiz = require('./respostas_quiz')(sequelize, Sequelize.DataTypes);
+// const quiz = require('./quiz')(sequelize, Sequelize.DataTypes);
+ const respostas_quiz = require('./respostas_quiz')(sequelize, Sequelize.DataTypes);
 // const respostas_teste = require('./respostas_teste')(sequelize, Sequelize.DataTypes);
 // const submeter_ficheiro = require('./submeter_ficheiro')(sequelize, Sequelize.DataTypes);
 // const teste = require('./teste')(sequelize, Sequelize.DataTypes);
@@ -59,8 +59,8 @@ const db = {
 //   notificacao,
 //   notificar,
 //   publicacao,
-   quiz,
-//   respostas_quiz,
+//   quiz,
+   respostas_quiz,
 //   respostas_teste,
 //   submeter_ficheiro,
 //   teste,
