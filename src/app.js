@@ -5,6 +5,9 @@ const categoriaRoutes = require('./routes/routeCategoria');
 const utilizadorRoutes = require('./routes/routeUtilizadores');
 const areaRoutes = require('./routes/routeArea');
 const topicoRoutes = require('./routes/routeTopico'); 
+const cursoRoutes = require('./routes/routeCurso'); 
+const aulaRoutes = require('./routes/routeAula'); 
+const publicacaoRoutes = require('./routes/routePublicacao');
 
 // Configurações
 app.set('port', process.env.port || 3000);
@@ -16,6 +19,9 @@ app.use('/api/categorias', categoriaRoutes);
 app.use('/api/utilizadores', utilizadorRoutes);
 app.use('/api/areas', areaRoutes);
 app.use('/api/topicos', topicoRoutes);
+app.use('/api/cursos', cursoRoutes);
+app.use('/api/aulas', aulaRoutes);
+app.use('/api/publicacoes', publicacaoRoutes);
 
 // Sincronizar e arrancar servidor
 db.sequelize.sync({ alter: true })
