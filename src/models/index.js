@@ -11,7 +11,7 @@ const sequelize = require('../database/db');
 // const avaliacao_publicacao = require('./avaliacao_publicacao')(sequelize, Sequelize.DataTypes);
 //  const categoria = require('./categoria')(sequelize, Sequelize.DataTypes);
 // const categoria_publicacao = require('./categoria_publicacao')(sequelize, Sequelize.DataTypes);
- const comentario = require('./comentario')(sequelize, Sequelize.DataTypes);
+// const comentario = require('./comentario')(sequelize, Sequelize.DataTypes);
 // const curso = require('./curso')(sequelize, Sequelize.DataTypes);
 // const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
 // const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
@@ -24,7 +24,7 @@ const sequelize = require('../database/db');
 // const notificacao = require('./notificacao')(sequelize, Sequelize.DataTypes);
 // const notificar = require('./notificar')(sequelize, Sequelize.DataTypes);
 // const publicacao = require('./publicacao')(sequelize, Sequelize.DataTypes);
-// const quiz = require('./quiz')(sequelize, Sequelize.DataTypes);
+ const quiz = require('./quiz')(sequelize, Sequelize.DataTypes);
 // const respostas_quiz = require('./respostas_quiz')(sequelize, Sequelize.DataTypes);
 // const respostas_teste = require('./respostas_teste')(sequelize, Sequelize.DataTypes);
 // const submeter_ficheiro = require('./submeter_ficheiro')(sequelize, Sequelize.DataTypes);
@@ -46,7 +46,7 @@ const db = {
 //   avaliacao_publicacao,
 //   categoria,
 //   categoria_publicacao,
-   comentario,
+//   comentario,
 //   curso,
 //   curso_assincrono,
 //   curso_sincrono,
@@ -59,7 +59,7 @@ const db = {
 //   notificacao,
 //   notificar,
 //   publicacao,
-//   quiz,
+   quiz,
 //   respostas_quiz,
 //   respostas_teste,
 //   submeter_ficheiro,

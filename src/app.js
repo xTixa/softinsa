@@ -9,6 +9,7 @@ const cursoRoutes = require('./routes/routeCurso');
 const aulaRoutes = require('./routes/routeAula'); 
 const publicacaoRoutes = require('./routes/routePublicacao');
 const comentarioRoutes = require('./routes/routeComentario'); 
+const quizRoutes = require('./routes/routeQuiz');
 
 // Configurações
 app.set('port', process.env.port || 3000);
@@ -24,6 +25,7 @@ app.use('/api/cursos', cursoRoutes);
 app.use('/api/aulas', aulaRoutes);
 app.use('/api/publicacoes', publicacaoRoutes);
 app.use('/api/comentarios', comentarioRoutes);
+app.use('/api/quizzes', quizRoutes);
 
 // Sincronizar e arrancar servidor
 db.sequelize.sync({ alter: true })
