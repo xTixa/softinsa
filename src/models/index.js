@@ -16,7 +16,7 @@ const sequelize = require('../database/db');
 // const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
 // const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
 // const denuncia_post = require('./denuncia_post')(sequelize, Sequelize.DataTypes);
-// const formador = require('./formador')(sequelize, Sequelize.DataTypes);
+ const formador = require('./formador')(sequelize, Sequelize.DataTypes);
 // const formando = require('./formando')(sequelize, Sequelize.DataTypes);
 // const gerir = require('./gerir')(sequelize, Sequelize.DataTypes);
 // const gestor = require('./gestor')(sequelize, Sequelize.DataTypes);
@@ -25,7 +25,7 @@ const sequelize = require('../database/db');
 // const notificar = require('./notificar')(sequelize, Sequelize.DataTypes);
 // const publicacao = require('./publicacao')(sequelize, Sequelize.DataTypes);
 // const quiz = require('./quiz')(sequelize, Sequelize.DataTypes);
- const respostas_quiz = require('./respostas_quiz')(sequelize, Sequelize.DataTypes);
+// const respostas_quiz = require('./respostas_quiz')(sequelize, Sequelize.DataTypes);
 // const respostas_teste = require('./respostas_teste')(sequelize, Sequelize.DataTypes);
 // const submeter_ficheiro = require('./submeter_ficheiro')(sequelize, Sequelize.DataTypes);
 // const teste = require('./teste')(sequelize, Sequelize.DataTypes);
@@ -51,7 +51,7 @@ const db = {
 //   curso_assincrono,
 //   curso_sincrono,
 //   denuncia_post,
-//   formador,
+   formador,
 //   formando,
 //   gerir,
 //   gestor,
@@ -60,7 +60,7 @@ const db = {
 //   notificar,
 //   publicacao,
 //   quiz,
-   respostas_quiz,
+//   respostas_quiz,
 //   respostas_teste,
 //   submeter_ficheiro,
 //   teste,
