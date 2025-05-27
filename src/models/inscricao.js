@@ -17,18 +17,10 @@ module.exports = function(sequelize, DataTypes) {
     id_utilizador: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: 'formando',
-        key: 'id_utilizador'
-      }
     },
     id_formando: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      references: {
-        model: 'formando',
-        key: 'id_utilizador'
-      }
     },
     estado: {
       type: DataTypes.STRING(256),
