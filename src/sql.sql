@@ -566,8 +566,7 @@ create table GESTOR (
    EMAIL                varchar(120)         not null,
    PALAVRA_PASSE        varchar(120)         not null,
    TELEMOVEL            int                  not null,
-   DATA_NASCIMENTO      datetime             not null,
-   GENERO               varchar(20)          null,
+   DATA_NASCIMENTO      datetime             not null,   GENERO               varchar(20)          null,
    constraint PK_GESTOR primary key (ID_UTILIZADOR, ID_GESTOR),
    constraint FK_GESTOR_TIPO_UTIL_UTILIZAD foreign key (ID_UTILIZADOR)
       references UTILIZADORES (ID_UTILIZADOR)
