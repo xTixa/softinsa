@@ -16,8 +16,9 @@ const sequelize = require('../database/db');
 // const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
 // const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
 // const denuncia_post = require('./denuncia_post')(sequelize, Sequelize.DataTypes);
- const formador = require('./formador')(sequelize, Sequelize.DataTypes);
-// const formando = require('./formando')(sequelize, Sequelize.DataTypes);
+ const utilizadores = require('./utilizadores')(sequelize, Sequelize.DataTypes);
+// const formador = require('./formador')(sequelize, Sequelize.DataTypes);
+ const formando = require('./formando')(sequelize, Sequelize.DataTypes);
 // const gerir = require('./gerir')(sequelize, Sequelize.DataTypes);
 // const gestor = require('./gestor')(sequelize, Sequelize.DataTypes);
 // const inscricao = require('./inscricao')(sequelize, Sequelize.DataTypes);
@@ -31,7 +32,6 @@ const sequelize = require('../database/db');
 // const teste = require('./teste')(sequelize, Sequelize.DataTypes);
 // const topico = require('./topico')(sequelize, Sequelize.DataTypes);
 // const topico_publicacao = require('./topico_publicacao')(sequelize, Sequelize.DataTypes);
-// const utilizadores = require('./utilizadores')(sequelize, Sequelize.DataTypes);
 
 // Agrupar todos os modelos
 const db = {
@@ -51,8 +51,9 @@ const db = {
 //   curso_assincrono,
 //   curso_sincrono,
 //   denuncia_post,
-   formador,
-//   formando,
+   utilizadores,
+//   formador,
+   formando,
 //   gerir,
 //   gestor,
 //   inscricao,
@@ -65,8 +66,7 @@ const db = {
 //   submeter_ficheiro,
 //   teste,
 //   topico,
-//   topico_publicacao,
-//   utilizadores
+//   topico_publicacao
 };
 
 module.exports = db;
