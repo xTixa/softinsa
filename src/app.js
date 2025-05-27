@@ -15,6 +15,7 @@ const formadorRoutes = require('./routes/routeFormador');
 const formandoRoutes = require('./routes/routeFormando');
 const notificacaoRoutes = require('./routes/routeNotificacao');
 const notificarRoutes = require('./routes/routeNotificar');
+const gestorRoutes = require('./routes/routeGestor'); 
 
 // Configurações
 app.set('port', process.env.port || 3000);
@@ -36,6 +37,7 @@ app.use('/api/formadores', formadorRoutes);
 app.use('/api/formandos', formandoRoutes);
 app.use('/api/notificacoes', notificacaoRoutes);
 app.use('/api/notificar', notificarRoutes);
+app.use('/api/gestores', gestorRoutes);
 
 // Sincronizar e arrancar servidor
 db.sequelize.sync({ alter: true })
