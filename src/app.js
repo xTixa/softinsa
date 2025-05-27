@@ -13,6 +13,7 @@ const quizRoutes = require('./routes/routeQuiz');
 const respostasQuizRoutes = require('./routes/routeRespostasQuiz'); 
 const formadorRoutes = require('./routes/routeFormador');
 const formandoRoutes = require('./routes/routeFormando');
+const notificacaoRoutes = require('./routes/routeNotificacao');
 
 // Configurações
 app.set('port', process.env.port || 3000);
@@ -32,6 +33,7 @@ app.use('/api/quizzes', quizRoutes);
 app.use('/api/respostas_quiz', respostasQuizRoutes);
 app.use('/api/formadores', formadorRoutes);
 app.use('/api/formandos', formandoRoutes);
+app.use('/api/notificacoes', notificacaoRoutes);
 
 // Sincronizar e arrancar servidor
 db.sequelize.sync({ alter: true })
