@@ -7,7 +7,7 @@ const sequelize = require('../database/db');
 // const area = require('./area')(sequelize, Sequelize.DataTypes);
 // const area_partilha = require('./area_partilha')(sequelize, Sequelize.DataTypes);
 // const aula = require('./aula')(sequelize, Sequelize.DataTypes);
-// const avaliacao_curso = require('./avaliacao_curso')(sequelize, Sequelize.DataTypes);
+ const avaliacao_curso = require('./avaliacao_curso')(sequelize, Sequelize.DataTypes);
 // const avaliacao_publicacao = require('./avaliacao_publicacao')(sequelize, Sequelize.DataTypes);
 //  const categoria = require('./categoria')(sequelize, Sequelize.DataTypes);
 // const categoria_publicacao = require('./categoria_publicacao')(sequelize, Sequelize.DataTypes);
@@ -21,7 +21,7 @@ const sequelize = require('../database/db');
 // const formando = require('./formando')(sequelize, Sequelize.DataTypes);
 // const gestor = require('./gestor')(sequelize, Sequelize.DataTypes);
 // const gerir = require('./gerir')(sequelize, Sequelize.DataTypes);
- const inscricao = require('./inscricao')(sequelize, Sequelize.DataTypes);
+// const inscricao = require('./inscricao')(sequelize, Sequelize.DataTypes);
 // const notificacao = require('./notificacao')(sequelize, Sequelize.DataTypes);
 // const notificar = require('./notificar')(sequelize, Sequelize.DataTypes);
 // const publicacao = require('./publicacao')(sequelize, Sequelize.DataTypes);
@@ -42,7 +42,7 @@ const db = {
 //   area,
 //   area_partilha,
 //   aula,
-//   avaliacao_curso,
+   avaliacao_curso,
 //   avaliacao_publicacao,
 //   categoria,
 //   categoria_publicacao,
@@ -56,7 +56,7 @@ const db = {
 //   formando,
 //   gestor,
 //   gerir,
-   inscricao,
+//   inscricao,
 //   notificacao,
 //   notificar,
 //   publicacao,

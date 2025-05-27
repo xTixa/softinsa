@@ -17,6 +17,7 @@ const notificacaoRoutes = require('./routes/routeNotificacao');
 const notificarRoutes = require('./routes/routeNotificar');
 const gestorRoutes = require('./routes/routeGestor');  
 const inscricaoRoutes = require('./routes/routeInscricao'); 
+const avaliacaoCursoRoutes = require('./routes/routeAvaliacaoCurso'); 
 
 // Configurações
 app.set('port', process.env.port || 3000);
@@ -40,6 +41,7 @@ app.use('/api/notificacoes', notificacaoRoutes);
 app.use('/api/notificar', notificarRoutes);
 app.use('/api/gestores', gestorRoutes);
 app.use('/api/inscricoes', inscricaoRoutes);
+app.use('/api/avaliacao_curso', avaliacaoCursoRoutes);
 
 // Sincronizar e arrancar servidor
 db.sequelize.sync({ alter: true })
