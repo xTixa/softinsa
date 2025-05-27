@@ -22,8 +22,8 @@ const sequelize = require('../database/db');
 // const gerir = require('./gerir')(sequelize, Sequelize.DataTypes);
 // const gestor = require('./gestor')(sequelize, Sequelize.DataTypes);
 // const inscricao = require('./inscricao')(sequelize, Sequelize.DataTypes);
- const notificacao = require('./notificacao')(sequelize, Sequelize.DataTypes);
-// const notificar = require('./notificar')(sequelize, Sequelize.DataTypes);
+// const notificacao = require('./notificacao')(sequelize, Sequelize.DataTypes);
+ const notificar = require('./notificar')(sequelize, Sequelize.DataTypes);
 // const publicacao = require('./publicacao')(sequelize, Sequelize.DataTypes);
 // const quiz = require('./quiz')(sequelize, Sequelize.DataTypes);
 // const respostas_quiz = require('./respostas_quiz')(sequelize, Sequelize.DataTypes);
@@ -57,8 +57,8 @@ const db = {
 //   gerir,
 //   gestor,
 //   inscricao,
-   notificacao,
-//   notificar,
+//   notificacao,
+   notificar,
 //   publicacao,
 //   quiz,
 //   respostas_quiz,
