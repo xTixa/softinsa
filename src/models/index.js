@@ -14,11 +14,11 @@ const sequelize = require('../database/db');
 // const comentario = require('./comentario')(sequelize, Sequelize.DataTypes);
 // const curso = require('./curso')(sequelize, Sequelize.DataTypes);
 // const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
- const formador = require('./formador')(sequelize, Sequelize.DataTypes);
- const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
+// const formador = require('./formador')(sequelize, Sequelize.DataTypes);
+// const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
 // const denuncia_post = require('./denuncia_post')(sequelize, Sequelize.DataTypes);
- const utilizadores = require('./utilizadores')(sequelize, Sequelize.DataTypes);
- const formando = require('./formando')(sequelize, Sequelize.DataTypes);
+// const utilizadores = require('./utilizadores')(sequelize, Sequelize.DataTypes);
+// const formando = require('./formando')(sequelize, Sequelize.DataTypes);
 // const gestor = require('./gestor')(sequelize, Sequelize.DataTypes);
 // const gerir = require('./gerir')(sequelize, Sequelize.DataTypes);
 // const inscricao = require('./inscricao')(sequelize, Sequelize.DataTypes);
@@ -29,7 +29,7 @@ const sequelize = require('../database/db');
 // const respostas_quiz = require('./respostas_quiz')(sequelize, Sequelize.DataTypes);
 // const respostas_teste = require('./respostas_teste')(sequelize, Sequelize.DataTypes);
 // const submeter_ficheiro = require('./submeter_ficheiro')(sequelize, Sequelize.DataTypes);
-// const teste = require('./teste')(sequelize, Sequelize.DataTypes);
+ const teste = require('./teste')(sequelize, Sequelize.DataTypes);
 // const topico = require('./topico')(sequelize, Sequelize.DataTypes);
 // const topico_publicacao = require('./topico_publicacao')(sequelize, Sequelize.DataTypes);
 
@@ -49,11 +49,11 @@ const db = {
 //   comentario,
 //   curso,
 //   curso_assincrono,
-   formador,
-   curso_sincrono,
+//   formador,
+//   curso_sincrono,
 //   denuncia_post,
-   utilizadores,
-   formando,
+//   utilizadores,
+//   formando,
 //   gestor,
 //   gerir,
 //   inscricao,
@@ -64,7 +64,7 @@ const db = {
 //   respostas_quiz,
 //   respostas_teste,
 //   submeter_ficheiro,
-//   teste,
+   teste,
 //   topico,
 //   topico_publicacao
 };

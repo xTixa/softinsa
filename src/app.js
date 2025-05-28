@@ -21,6 +21,8 @@ const avaliacaoCursoRoutes = require('./routes/routeAvaliacaoCurso');
 const avaliacaoPublicacaoRoutes = require('./routes/routeAvaliacaoPublicacao');
 const cursoAssincronoRoutes = require('./routes/routeCursoAssincrono');
 const cursoSincronoRoutes = require('./routes/routeCursoSincrono');
+const testeRoutes = require('./routes/routeTeste'); 
+
 // Configurações
 app.set('port', process.env.port || 3000);
 app.use(express.json());
@@ -47,6 +49,7 @@ app.use('/api/avaliacao_curso', avaliacaoCursoRoutes);
 app.use('/api/avaliacao_publicacao', avaliacaoPublicacaoRoutes);
 app.use('/api/curso_assincrono', cursoAssincronoRoutes);
 app.use('/api/curso_sincrono', cursoSincronoRoutes);
+app.use('/api/testes', testeRoutes);
 
 // Sincronizar e arrancar servidor
 db.sequelize.sync({ alter: true })

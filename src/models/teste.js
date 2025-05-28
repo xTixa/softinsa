@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('teste', {
+  const Teste = sequelize.define('teste', {
     id_teste: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -8,19 +8,11 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_curso: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'curso_sincrono',
-        key: 'id_sincrono'
-      }
+      allowNull: false
     },
     id_sincrono: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'curso_sincrono',
-        key: 'id_sincrono'
-      }
+      allowNull: false
     },
     anexo_teste: {
       type: DataTypes.STRING(256),
@@ -47,10 +39,10 @@ module.exports = function(sequelize, DataTypes) {
       {
         name: "pk_teste",
         unique: true,
-        fields: [
-          { name: "id_teste" },
-        ]
-      },
+        fields: [{ name: "id_teste" }]
+      }
     ]
   });
+
+  return Teste;
 };
