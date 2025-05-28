@@ -8,12 +8,12 @@ const sequelize = require('../database/db');
 // const area_partilha = require('./area_partilha')(sequelize, Sequelize.DataTypes);
 // const aula = require('./aula')(sequelize, Sequelize.DataTypes);
 // const avaliacao_curso = require('./avaliacao_curso')(sequelize, Sequelize.DataTypes);
- const avaliacao_publicacao = require('./avaliacao_publicacao')(sequelize, Sequelize.DataTypes);
+// const avaliacao_publicacao = require('./avaliacao_publicacao')(sequelize, Sequelize.DataTypes);
 //  const categoria = require('./categoria')(sequelize, Sequelize.DataTypes);
 // const categoria_publicacao = require('./categoria_publicacao')(sequelize, Sequelize.DataTypes);
 // const comentario = require('./comentario')(sequelize, Sequelize.DataTypes);
 // const curso = require('./curso')(sequelize, Sequelize.DataTypes);
-// const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
+ const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
 // const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
 // const denuncia_post = require('./denuncia_post')(sequelize, Sequelize.DataTypes);
 // const utilizadores = require('./utilizadores')(sequelize, Sequelize.DataTypes);
@@ -43,12 +43,12 @@ const db = {
 //   area_partilha,
 //   aula,
 //   avaliacao_curso,
-   avaliacao_publicacao,
+//   avaliacao_publicacao,
 //   categoria,
 //   categoria_publicacao,
 //   comentario,
 //   curso,
-//   curso_assincrono,
+   curso_assincrono,
 //   curso_sincrono,
 //   denuncia_post,
 //   utilizadores,

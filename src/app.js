@@ -19,6 +19,7 @@ const gestorRoutes = require('./routes/routeGestor');
 const inscricaoRoutes = require('./routes/routeInscricao'); 
 const avaliacaoCursoRoutes = require('./routes/routeAvaliacaoCurso');
 const avaliacaoPublicacaoRoutes = require('./routes/routeAvaliacaoPublicacao');
+const cursoAssincronoRoutes = require('./routes/routeCursoAssincrono');
 
 // Configurações
 app.set('port', process.env.port || 3000);
@@ -44,6 +45,7 @@ app.use('/api/gestores', gestorRoutes);
 app.use('/api/inscricoes', inscricaoRoutes);
 app.use('/api/avaliacao_curso', avaliacaoCursoRoutes);
 app.use('/api/avaliacao_publicacao', avaliacaoPublicacaoRoutes);
+app.use('/api/curso_assincrono', cursoAssincronoRoutes);
 
 // Sincronizar e arrancar servidor
 db.sequelize.sync({ alter: true })
