@@ -13,12 +13,12 @@ const sequelize = require('../database/db');
 // const categoria_publicacao = require('./categoria_publicacao')(sequelize, Sequelize.DataTypes);
 // const comentario = require('./comentario')(sequelize, Sequelize.DataTypes);
 // const curso = require('./curso')(sequelize, Sequelize.DataTypes);
- const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
-// const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
+// const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
+ const formador = require('./formador')(sequelize, Sequelize.DataTypes);
+ const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
 // const denuncia_post = require('./denuncia_post')(sequelize, Sequelize.DataTypes);
-// const utilizadores = require('./utilizadores')(sequelize, Sequelize.DataTypes);
-// const formador = require('./formador')(sequelize, Sequelize.DataTypes);
-// const formando = require('./formando')(sequelize, Sequelize.DataTypes);
+ const utilizadores = require('./utilizadores')(sequelize, Sequelize.DataTypes);
+ const formando = require('./formando')(sequelize, Sequelize.DataTypes);
 // const gestor = require('./gestor')(sequelize, Sequelize.DataTypes);
 // const gerir = require('./gerir')(sequelize, Sequelize.DataTypes);
 // const inscricao = require('./inscricao')(sequelize, Sequelize.DataTypes);
@@ -48,12 +48,12 @@ const db = {
 //   categoria_publicacao,
 //   comentario,
 //   curso,
-   curso_assincrono,
-//   curso_sincrono,
+//   curso_assincrono,
+   formador,
+   curso_sincrono,
 //   denuncia_post,
-//   utilizadores,
-//   formador,
-//   formando,
+   utilizadores,
+   formando,
 //   gestor,
 //   gerir,
 //   inscricao,
