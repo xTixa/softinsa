@@ -1,0 +1,65 @@
+.adicionar-formando {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.adicionar-formando h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.foto-preview {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  background: #eee;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+input, select {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.form-buttons button {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-buttons button:first-child {
+  background-color: #ddd;
+}
+
+.form-buttons button:last-child {
+  background-color: #2e5090;
+  color: white;
+}

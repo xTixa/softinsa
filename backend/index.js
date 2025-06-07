@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
 
@@ -49,4 +49,6 @@ app.post('/login', async (req, res) => {
 // INICIAR SERVIDOR
 app.listen(3001, () => {
   console.log('Servidor backend ativo em http://localhost:3001');
-});
+});*/
+// index.js
+require('./src/app');

@@ -1,0 +1,37 @@
+.actions-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.menu-options {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+.menu-options button {
+  display: block;
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 0.4rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-options button:hover {
+  background-color: #f0f0f0;
+}

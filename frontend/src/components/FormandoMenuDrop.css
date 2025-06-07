@@ -1,0 +1,36 @@
+.menu-dropdown {
+  position: relative;
+}
+
+.menu-button {
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+
+.menu-options {
+  position: absolute;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  z-index: 10;
+}
+
+.menu-options button {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-options button:hover {
+  background: #f0f0f0;
+}

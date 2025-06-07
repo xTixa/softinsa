@@ -22,11 +22,13 @@ const avaliacaoPublicacaoRoutes = require('./routes/routeAvaliacaoPublicacao');
 const cursoAssincronoRoutes = require('./routes/routeCursoAssincrono');
 const cursoSincronoRoutes = require('./routes/routeCursoSincrono');
 const testeRoutes = require('./routes/routeTeste'); 
+const authRoutes = require('./routes/routeAuth'); //novo -------------- LOGIN
+const dashboardRoutes = require('./routes/routeDashboard'); // novo -------------- DASHBOARD ADMIN
 
 // Configurações
 app.set('port', process.env.port || 3000);
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Corrigir aqui o caminho da rota
 app.use('/api/categorias', categoriaRoutes);
@@ -50,9 +52,11 @@ app.use('/api/avaliacao_publicacao', avaliacaoPublicacaoRoutes);
 app.use('/api/curso_assincrono', cursoAssincronoRoutes);
 app.use('/api/curso_sincrono', cursoSincronoRoutes);
 app.use('/api/testes', testeRoutes);
+app.use('/api/auth', authRoutes); //novo -------------- LOGIN
+app.use('/api/dashboard', dashboardRoutes); // novo -------------- DASHBOARD ADMIN
 
 // Sincronizar e arrancar servidor
-db.sequelize.sync({ alter: true })
+/*db.sequelize.sync({ alter: true })
   .then(() => {
     console.log('Tabelas sincronizadas com a base de dados');
     app.listen(app.get('port'), () => {
@@ -65,4 +69,21 @@ db.sequelize.sync({ alter: true })
 
   app.get('/', (req, res) => {
   res.send('API do backend está a funcionar ✅');
+});*/
+
+app.get('/', (req, res) => {
+  res.send('API do backend está a funcionar ✅');
 });
+
+db.sequelize.sync({ alter: true })
+  .then(() => {
+    console.log('Tabelas sincronizadas com a base de dados');
+    app.listen(app.get('port'), () => {
+      console.log('Servidor a correr na porta ' + app.get('port'));
+    });
+  })
+  .catch((err) => {
+    console.error('Erro ao sincronizar com a base de dados:', err);
+  });
+
+

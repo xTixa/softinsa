@@ -1,25 +1,32 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { users } from '../data/users';
+import axios from 'axios';
 import './Login.css';
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [erro, setErro] = useState('');
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setErro('');
 
-    const user = users.find(
-      (u) => u.username === email && u.password === password
-    );
+    try {
+      const res = await axios.post('/api/auth/login', {
+        email,
+        password
+      });
 
-    if (user) {
+      const user = res.data;
+
+      // Guarda no localStorage
       localStorage.setItem('user', JSON.stringify(user));
 
-      switch (user.role) {
-        case 'admin':
+      // Redireciona conforme o tipo
+      switch (user.tipo) {
+        case 'gestor':
           navigate('/admin');
           break;
         case 'formador':
@@ -29,10 +36,10 @@ export default function Login() {
           navigate('/formando');
           break;
         default:
-          navigate('/');
+          setErro('Tipo de utilizador desconhecido.');
       }
-    } else {
-      alert('Credenciais inválidas');
+    } catch (err) {
+      setErro('Credenciais inválidas');
     }
   };
 
@@ -64,6 +71,7 @@ export default function Login() {
         />
 
         <button type="submit">Entrar</button>
+        {erro && <p style={{ color: 'red' }}>{erro}</p>}
       </form>
     </div>
   );
