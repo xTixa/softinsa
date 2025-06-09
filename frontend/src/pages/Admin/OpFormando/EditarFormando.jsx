@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './EditarFormando.css';
-import NavBar from '../components/Navbar';
+import NavBar from '../../../components/Navbar';
 
 export default function EditarFormando() {
   const { id_utilizador, id_formando } = useParams();

@@ -9,6 +9,10 @@ export default function Navbar() {
   const [menuAberto, setMenuAberto] = useState(false);
   const navigate = useNavigate();
   const menuRef = useRef();
+  const dropdownRef = useRef();
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const user = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
     axios.get('/api/categorias')
@@ -17,19 +21,30 @@ export default function Navbar() {
   }, []);
 
   const toggleMenu = () => setMenuAberto(!menuAberto);
+  const toggleDropdown = () => setShowDropdown(prev => !prev);
 
   const handleLogout = () => {
     localStorage.removeItem('user');
     navigate('/');
   };
 
-  const [showDropdown, setShowDropdown] = useState(false);
-  const user = JSON.parse(localStorage.getItem('user'));
-  const dropdownRef = useRef();
+  const handleLogoClick = () => {
+    switch (user?.tipo) {
+      case 'gestor':
+        navigate('/admin');
+        break;
+      case 'formador':
+        navigate('/formador');
+        break;
+      case 'formando':
+        navigate('/formando');
+        break;
+      default:
+        navigate('/');
+    }
+  };
 
-  const toggleDropdown = () => setShowDropdown(prev => !prev);
-
-  // Fecha o menu ao clicar fora
+  // Fecha o dropdown ao clicar fora
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
@@ -40,7 +55,7 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Fecha menu ao clicar fora
+  // Fecha menu do utilizador ao clicar fora
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -54,7 +69,13 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <img src={logo} alt="SOFTINSA" className="logo" />
+        <img
+          src={logo}
+          alt="SOFTINSA"
+          className="logo"
+          onClick={handleLogoClick}
+          style={{ cursor: 'pointer' }}
+        />
 
         <select className="categoria-select">
           <option value="">Categoria</option>

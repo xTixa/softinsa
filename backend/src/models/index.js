@@ -33,6 +33,11 @@ const gestor = require('./gestor')(sequelize, Sequelize.DataTypes);
 // const topico = require('./topico')(sequelize, Sequelize.DataTypes);
 // const topico_publicacao = require('./topico_publicacao')(sequelize, Sequelize.DataTypes);
 
+curso.belongsTo(formador, { foreignKey: 'id_formador' });
+// formando.belongsTo(utilizadores, { foreignKey: 'id_utilizador' });
+// formando.belongsTo(curso, { foreignKey: 'id_curso' });
+// formador.belongsTo(utilizadores, { foreignKey: 'id_utilizador' });
+
 // Agrupar todos os modelos
 const db = {
   Sequelize,

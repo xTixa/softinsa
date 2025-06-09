@@ -1,4 +1,4 @@
-import NavBar from '../components/Navbar';
+import NavBar from '../../components/Navbar';
 
 export default function FormandoPage() {
   return (

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import FormandoCard from '../components/FormandoCard';
-import FormandoList from '../components/FormandoList';
-import FormandoMenuDropdown from '../components/FormandoMenuDrop';
+import FormandoCard from '../../../components/FormandoCard';
+import FormandoList from '../../../components/FormandoList';
+import FormandoMenuDropdown from '../../../components/FormandoMenuDrop';
 import './AdminGestaoFormandos.css';
-import NavBar from '../components/Navbar';
-import FormandoModal from '../components/FormandoModal';
+import NavBar from '../../../components/Navbar';
+import FormandoModal from '../../../components/FormandoModal';
 
 export default function AdminGestaoFormandos() {
   const [formandos, setFormandos] = useState([]);

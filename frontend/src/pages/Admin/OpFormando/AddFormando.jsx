@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './AddFormando.css';
-import NavBar from '../components/Navbar';
+import NavBar from '../../../components/Navbar';
 
 export default function AdicionarFormando() {
   const [formando, setFormando] = useState({

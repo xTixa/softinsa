@@ -8,6 +8,7 @@ router.get('/stats', async (req, res) => {
     const totalFormadores = await db.formador.count();
     const totalCursos = await db.curso.count();
 
+    // Calcular duração total em dias
     const cursos = await db.curso.findAll({
       attributes: ['data_inicio', 'data_fim']
     });
@@ -20,13 +21,25 @@ router.get('/stats', async (req, res) => {
       totalDias += dias;
     });
 
+    // Top 5 cursos com maior avaliação
+    const topCourses = await db.curso.findAll({
+      attributes: ['id_curso', 'titulo', 'descricao', 'avaliacao'],
+      where: {
+        avaliacao: { [db.Sequelize.Op.not]: null }
+      },
+      order: [['avaliacao', 'DESC']],
+      limit: 5
+    });
+
     res.json({
       totalUsers,
       totalFormadores,
       totalCursos,
-      totalDias: Math.round(totalDias)
+      totalDias: Math.round(totalDias),
+      topCourses
     });
   } catch (err) {
+    console.error(err);
     res.status(500).json({ erro: 'Erro ao obter estatísticas', detalhes: err.message });
   }
 });

@@ -1,12 +1,13 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from '../pages/Login';
-import AdminDashboard from '../pages/AdminDashboard';
-import FormadorPage from '../pages/Formador';
-import FormandoPage from '../pages/Formando';
-import AdminGestaoFormandos from '../pages/AdminGestaoFormandos';
-import AdicionarFormando from '../pages/AddFormando';
-import EditarFormando from '../pages/EditarFormando';
-
+import AdminDashboard from '../pages/Admin/AdminDashboard';
+import FormadorPage from '../pages/Formador/Formador';
+import FormandoPage from '../pages/Formando/Formando';
+import AdminGestaoFormandos from '../pages/Admin/OpFormando/AdminGestaoFormandos';
+import AdicionarFormando from '../pages/Admin/OpFormando/AddFormando';
+import EditarFormando from '../pages/Admin/OpFormando/EditarFormando';
+import GestaoCursos from '../pages/Admin/OpCursos/GestaoCursos';
+import AdicionarCurso from '../pages/Admin/OpCursos/AddCurso';
 
 export default function AppRoutes() {
   return (
@@ -17,6 +18,8 @@ export default function AppRoutes() {
         <Route path="/admin/formandos" element={<AdminGestaoFormandos />} />
         <Route path="/admin/formandos/novo" element={<AdicionarFormando />} />
         <Route path="/admin/formandos/editar/:id_utilizador/:id_formando" element={<EditarFormando />} />
+        <Route path="/admin/cursos" element={<GestaoCursos />} />
+        <Route path="/admin/cursos/adicionar" element={<AdicionarCurso />} />
         <Route path="/formador" element={<FormadorPage />} />
         <Route path="/formando" element={<FormandoPage />} />
       </Routes>

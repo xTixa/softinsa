@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import StatsCard from '../components/StatsCard';
-import CourseCard from '../components/CourseCard';
-import NavBar from '../components/Navbar';
+import StatsCard from '../../components/StatsCard';
+import CourseCard from '../../components/CourseCard';
+import NavBar from '../../components/Navbar';
 import './AdminDashboard.css';
 import axios from 'axios';
 
