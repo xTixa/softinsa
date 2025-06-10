@@ -8,19 +8,19 @@ export default function AdicionarFormando() {
   const [formando, setFormando] = useState({
     nome: '',
     email: '',
-    palavra_passe: '',
+    palavra_passe: '', 
     telemovel: '',
     data_nascimento: '',
     genero: '',
-    descricao_formando: '',
-    educacao_formando: '',
-    habilidades_formando: '',
-    certificacoes_formando: '',
+    descricao_formando: ' ', 
+    educacao_formando: ' ',   
+    habilidades_formando: ' ', 
+    certificacoes_formando: ' ', 
     n_cursosacabados: 0,
     n_cursosinscritos: 0,
     data_inscricao: new Date().toISOString(),
-    id_utilizador: Math.floor(Math.random() * 100000), // Exemplo temporário
-    id_formando: Math.floor(Math.random() * 100000),   // Exemplo temporário
+    id_utilizador: Math.floor(Math.random() * 100000),
+    id_formando: Math.floor(Math.random() * 100000),
   });
 
   const navigate = useNavigate();

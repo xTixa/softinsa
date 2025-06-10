@@ -8,6 +8,7 @@ import AdicionarFormando from '../pages/Admin/OpFormando/AddFormando';
 import EditarFormando from '../pages/Admin/OpFormando/EditarFormando';
 import GestaoCursos from '../pages/Admin/OpCursos/GestaoCursos';
 import AdicionarCurso from '../pages/Admin/OpCursos/AddCurso';
+import AdminGestaoFormadores from '../pages/Admin/OpFormador/AdminGestaoFormador';
 
 export default function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ export default function AppRoutes() {
         <Route path="/admin/formandos/editar/:id_utilizador/:id_formando" element={<EditarFormando />} />
         <Route path="/admin/cursos" element={<GestaoCursos />} />
         <Route path="/admin/cursos/adicionar" element={<AdicionarCurso />} />
+        <Route path="/admin/formadores" element={<AdminGestaoFormadores />} />
         <Route path="/formador" element={<FormadorPage />} />
         <Route path="/formando" element={<FormandoPage />} />
       </Routes>
