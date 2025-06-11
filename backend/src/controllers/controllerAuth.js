@@ -19,7 +19,7 @@ exports.login = async (req, res) => {
     if (fmd && fmd.palavra_passe === password) {
       return res.json({
         id_utilizador: fmd.id_utilizador,
-        id_formador: fmd.id_formador, // ✅ este campo é essencial
+        id_formador: fmd.id_formador, // Garantir que o id_formador é o mesmo que o id_utilizador
         nome: fmd.nome,
         tipo: 'formador'
       });
@@ -29,7 +29,8 @@ exports.login = async (req, res) => {
     const fnd = await formando.findOne({ where: { email } });
     if (fnd && fnd.palavra_passe === password) {
       return res.json({
-        id: fnd.id_utilizador,
+        id_utilizador: fnd.id_utilizador,
+        id_formando: fnd.id_formando, // Garantir que o id_formando é o mesmo que o id_utilizador
         nome: fnd.nome,
         tipo: 'formando'
       });

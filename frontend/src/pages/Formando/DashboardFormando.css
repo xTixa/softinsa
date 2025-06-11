@@ -1,0 +1,47 @@
+.tabs {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0 1rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.tabs button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  color: #9ca3af;
+  position: relative;
+}
+
+.tabs button.active {
+  color: #111827;
+  border-bottom: 3px solid #111827;
+}
+
+.filtros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.filtros-botoes {
+  display: flex;
+  gap: 1rem;
+}
+
+.filtros-botoes button {
+  padding: 0.4rem 1rem;
+  background: #e5e7eb;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.filtro-ativo {
+  background: #1d4ed8;
+  color: white;
+}

@@ -35,7 +35,7 @@ export default function AppRoutes() {
 
 
         <Route path="/formando" element={<FormandoPage />} />
-        <Route path="/formando/perfil/:id" element={<PerfilFormando />} />
+        <Route path="/formando/perfil" element={<PerfilFormando />} />
 
 
         <Route path="/dev" element={<TestesComponentes />} />

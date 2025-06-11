@@ -131,7 +131,7 @@ export default function Navbar() {
               <button onClick={() => {
                 const user = JSON.parse(localStorage.getItem('user'));
 
-                if (!user) return navigate('/login'); // fallback de segurança
+                if (!user) return navigate('/login'); 
 
                 switch (user.tipo) {
                   case 'admin':
@@ -144,7 +144,7 @@ export default function Navbar() {
                     navigate(`/formador/perfil/${user.id}`);
                     break;
                   case 'formando':
-                    navigate(`/formando/perfil/${user.id}`);
+                    navigate(`/formando/perfil`);
                     break;
                   default:
                     navigate('/login');
