@@ -2,11 +2,17 @@ import { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Navbar.css';
-import logo from '../assets/logotipo.png'; 
+import logo from '../assets/logotipo.png';
 
 export default function Navbar() {
   const [categorias, setCategorias] = useState([]);
   const [menuAberto, setMenuAberto] = useState(false);
+  const [submenuDefinicoes, setSubmenuDefinicoes] = useState(false);
+  const [submenuAjuda, setSubmenuAjuda] = useState(false);
+  const [notificacoesAtivas, setNotificacoesAtivas] = useState(true);
+  const [showNotificacoes, setShowNotificacoes] = useState(false);
+  const notificacoesRef = useRef();
+
   const navigate = useNavigate();
   const menuRef = useRef();
   const dropdownRef = useRef();
@@ -44,27 +50,25 @@ export default function Navbar() {
     }
   };
 
-  // Fecha o dropdown ao clicar fora
+  // Fecha dropdowns ao clicar fora
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setShowDropdown(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  const handleClickOutside = (e) => {
+    if (
+      menuRef.current && !menuRef.current.contains(e.target) &&
+      dropdownRef.current && !dropdownRef.current.contains(e.target) &&
+      notificacoesRef.current && !notificacoesRef.current.contains(e.target)
+    ) {
+      setMenuAberto(false);
+      setShowDropdown(false);
+      setSubmenuDefinicoes(false);
+      setSubmenuAjuda(false);
+      setShowNotificacoes(false);
+    }
+  };
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => document.removeEventListener('mousedown', handleClickOutside);
+}, []);
 
-  // Fecha menu do utilizador ao clicar fora
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setMenuAberto(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   return (
     <nav className="navbar">
@@ -105,15 +109,77 @@ export default function Navbar() {
 
         <button className="icon-btn">📅 Mensagens</button>
         <button className="icon-btn">💬 Fórum</button>
-        <button className="round-btn">🔔</button>
+        <div className="notificacoes-container" ref={notificacoesRef}>
+          <button className="round-btn" onClick={() => setShowNotificacoes(!showNotificacoes)}>🔔</button>
+          {showNotificacoes && (
+            <div className="notificacoes-dropdown">
+              <p><strong>Notificações</strong></p>
+              <ul>
+                <li>@import</li>
+                <li>@import</li>
+                <li>@import</li>
+              </ul>
+            </div>
+          )}
+        </div>
+
 
         <div className="user-menu-container" ref={menuRef}>
           <button className="round-btn" onClick={toggleMenu}>👤</button>
           {menuAberto && (
             <div className="user-dropdown">
-              <button onClick={() => navigate('/perfil')}>👤 Perfil</button>
-              <button onClick={() => navigate('/definicoes')}>⚙️ Definições</button>
-              <button onClick={handleLogout}>🔓 Terminar sessão</button>
+              <button onClick={() => {
+                const user = JSON.parse(localStorage.getItem('user'));
+
+                if (!user) return navigate('/login'); // fallback de segurança
+
+                switch (user.tipo) {
+                  case 'admin':
+                    navigate(`/admin/perfil/${user.id}`);
+                    break;
+                  case 'gestor':
+                    navigate(`/gestor/perfil/${user.id}`);
+                    break;
+                  case 'formador':
+                    navigate(`/formador/perfil/${user.id}`);
+                    break;
+                  case 'formando':
+                    navigate(`/formando/perfil/${user.id}`);
+                    break;
+                  default:
+                    navigate('/login');
+                }
+              }}>👤 Perfil</button>
+
+              <button onClick={() => navigate('/conta')}>🗂️ Conta</button>
+
+              <div className="submenu">
+                <button onClick={() => setSubmenuDefinicoes(!submenuDefinicoes)}>
+                  ⚙️ Definições {submenuDefinicoes ? '▲' : '▼'}
+                </button>
+                {submenuDefinicoes && (
+                  <div className="submenu-items">
+                    <button onClick={() => setNotificacoesAtivas(!notificacoesAtivas)}>
+                      🔔 Notificações: {notificacoesAtivas ? 'Enable' : 'Disable'}
+                    </button>
+                    <button onClick={() => navigate('/alterar-password')}>Alterar Password</button>
+                  </div>
+                )}
+              </div>
+
+              <div className="submenu">
+                <button onClick={() => setSubmenuAjuda(!submenuAjuda)}>
+                  ❓ Ajuda {submenuAjuda ? '▲' : '▼'}
+                </button>
+                {submenuAjuda && (
+                  <div className="submenu-items">
+                    <button onClick={() => navigate('/ajuda')}>Ajuda</button>
+                    <button onClick={() => navigate('/contactar-gestor')}>Contactar Administrador</button>
+                  </div>
+                )}
+              </div>
+
+              <button onClick={handleLogout}>Logout</button>
             </div>
           )}
         </div>

@@ -18,7 +18,8 @@ exports.login = async (req, res) => {
     const fmd = await formador.findOne({ where: { email } });
     if (fmd && fmd.palavra_passe === password) {
       return res.json({
-        id: fmd.id_utilizador,
+        id_utilizador: fmd.id_utilizador,
+        id_formador: fmd.id_formador, // ✅ este campo é essencial
         nome: fmd.nome,
         tipo: 'formador'
       });

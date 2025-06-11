@@ -17,19 +17,19 @@ module.exports = function(sequelize, DataTypes) {
     },
     id_utilizador: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
+      allowNull: true
+      /*references: {
         model: 'formador',
         key: 'id_utilizador'
-      }
+      }*/
     },
     id_formador: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
+      allowNull: true
+      /*references: {
         model: 'formador',
         key: 'id_utilizador'
-      }
+      }*/
     },
     id_area: {
       type: DataTypes.INTEGER,

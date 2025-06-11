@@ -13,9 +13,9 @@ const categoria = require('./categoria')(sequelize, Sequelize.DataTypes);
 // const categoria_publicacao = require('./categoria_publicacao')(sequelize, Sequelize.DataTypes);
 // const comentario = require('./comentario')(sequelize, Sequelize.DataTypes);
 const curso = require('./curso')(sequelize, Sequelize.DataTypes);
-//const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
+const curso_assincrono = require('./curso_assincrono')(sequelize, Sequelize.DataTypes);
 const formador = require('./formador')(sequelize, Sequelize.DataTypes);
-//const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
+const curso_sincrono = require('./curso_sincrono')(sequelize, Sequelize.DataTypes);
 // const denuncia_post = require('./denuncia_post')(sequelize, Sequelize.DataTypes);
 const utilizadores = require('./utilizadores')(sequelize, Sequelize.DataTypes);
 const formando = require('./formando')(sequelize, Sequelize.DataTypes);
@@ -38,6 +38,13 @@ curso.belongsTo(formador, { foreignKey: 'id_formador' });
 // formando.belongsTo(curso, { foreignKey: 'id_curso' });
 // formador.belongsTo(utilizadores, { foreignKey: 'id_utilizador' });
 
+// Associações para cursos sincronos e assincronos
+formador.hasMany(curso_sincrono, { foreignKey: 'id_formador' });
+formador.hasMany(curso_assincrono, { foreignKey: 'id_formador' });
+
+curso_sincrono.belongsTo(formador, { foreignKey: 'id_formador' });
+curso_assincrono.belongsTo(formador, { foreignKey: 'id_formador' });
+
 // Agrupar todos os modelos
 const db = {
   Sequelize,
@@ -53,9 +60,9 @@ categoria,
 //   categoria_publicacao,
 //   comentario,
 curso,
-//curso_assincrono,
+curso_assincrono,
 formador,
-//curso_sincrono,
+curso_sincrono,
 //   denuncia_post,
 utilizadores,
 formando,
